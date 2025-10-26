@@ -5,6 +5,7 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+const EMOJIS = ["🍝","🍕","🥗","🍰","🍷","🧀","🍤","🍮","🍩","🌮","🍔","🍣"];
 
   return (
     <>
@@ -18,9 +19,14 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button
+          onClick={() => setCount((n) => n + 1)}
+          aria-label="Restaurant fan button"
+          style={{ padding: "10px 16px", borderRadius: 12, cursor: "pointer" }}
+        >
+          {EMOJIS[count % EMOJIS.length]} Olive Garden — clicks: {count}
         </button>
+
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
